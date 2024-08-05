@@ -187,9 +187,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408032110092_InitialCreate.cs" />
+    <Compile Include="Migrations\202408032110092_InitialCreate.Designer.cs">
+      <DependentUpon>202408032110092_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408050616568_patients.cs" />
+    <Compile Include="Migrations\202408050616568_patients.Designer.cs">
+      <DependentUpon>202408050616568_patients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408050641415_staffs.cs" />
+    <Compile Include="Migrations\202408050641415_staffs.Designer.cs">
+      <DependentUpon>202408050641415_staffs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408050725470_patient-staff.cs" />
+    <Compile Include="Migrations\202408050725470_patient-staff.Designer.cs">
+      <DependentUpon>202408050725470_patient-staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -294,6 +313,20 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202408032110092_InitialCreate.resx">
+      <DependentUpon>202408032110092_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408050616568_patients.resx">
+      <DependentUpon>202408050616568_patients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408050641415_staffs.resx">
+      <DependentUpon>202408050641415_staffs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408050725470_patient-staff.resx">
+      <DependentUpon>202408050725470_patient-staff.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

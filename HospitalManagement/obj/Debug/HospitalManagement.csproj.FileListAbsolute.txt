@@ -112,3 +112,8 @@ D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj
 D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\Hospital.2B9058E3.Up2Date
 D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\HospitalManagement.dll
 D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\HospitalManagement.pdb
+D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\HospitalManagement.Migrations.InitialCreate.resources
+D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\HospitalManagement.csproj.GenerateResource.cache
+D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\HospitalManagement.Migrations.patients.resources
+D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\HospitalManagement.Migrations.staffs.resources
+D:\humber\sem - 2\Http-5226-Backend-2\Hospital-Management\HospitalManagement\obj\Debug\HospitalManagement.Migrations.patientstaff.resources
