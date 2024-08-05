@@ -25,7 +25,12 @@ namespace HospitalManagement.Models
         {
         }
 
-        public static ApplicationDbContext Create()
+        // Add an patient entity to our system
+
+        public DbSet<Patient> Patients { get; set; }
+
+        public DbSet<Staff> Staffs { get; set; }     
+            public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
