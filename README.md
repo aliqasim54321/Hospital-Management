@@ -1,4 +1,5 @@
 # Hospital-Management
+<img src="https://2.bp.blogspot.com/-XhybS8KcKus/Wjobhn2HqMI/AAAAAAAABKQ/AkRcUSdL1hU9PIkludjTXqFTgdQbasQuACLcBGAs/s400/HM.jpg" height="400" width="1200">
 ## Overview
 This project is basically an application which helps the Hostpitals to manage patient and their incharge Doctor details efficiently and smoothly. It also helps the patients to avoid standing in a long queue waiting for their bills. Anthor feature is the Income and Expense of Hospital can be tracked easily.
 In this way this application saves a lot of time in managing the activities within the Hospital.
