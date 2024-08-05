@@ -184,6 +184,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,10 +204,15 @@
     <Compile Include="Migrations\202408050725470_patient-staff.Designer.cs">
       <DependentUpon>202408050725470_patient-staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408051927135_order-patient.cs" />
+    <Compile Include="Migrations\202408051927135_order-patient.Designer.cs">
+      <DependentUpon>202408051927135_order-patient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -326,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408050725470_patient-staff.resx">
       <DependentUpon>202408050725470_patient-staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408051927135_order-patient.resx">
+      <DependentUpon>202408051927135_order-patient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
