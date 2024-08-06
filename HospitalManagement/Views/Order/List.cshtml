@@ -1,0 +1,15 @@
+﻿﻿@model IEnumerable<HospitalManagement.Models.OrderDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach (var order in Model)
+{
+    <h2><a href="/Order/Details/@order.Order_id">@order.Order_id</a></h2>
+    <div>Patient Name: @order.PatientName</div>
+    <div>Category: @order.Category</div>
+    <div>$@order.Total_Price</div>
+
+}
+

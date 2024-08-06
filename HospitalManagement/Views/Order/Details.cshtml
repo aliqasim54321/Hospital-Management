@@ -1,0 +1,10 @@
+﻿﻿@model HospitalManagement.Models.OrderDto
+@{
+    ViewBag.Title = "View";
+}
+<a href="/Order/List">Go back to list</a>
+<h2>@Model.Order_id</h2>
+<div>Patient Name: @Model.PatientName</div>
+<div>Category: @Model.Category</div>
+<div>$@Model.Total_Price</div>
+
