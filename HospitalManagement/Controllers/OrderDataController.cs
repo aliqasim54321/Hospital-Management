@@ -60,13 +60,18 @@ namespace HospitalManagement.Controllers
         [HttpPost]
         public IHttpActionResult UpdateOrder(int id, Order order)
         {
+            Debug.WriteLine("I have reached the update order method");
             if (!ModelState.IsValid)
             {
+                Debug.WriteLine("Model State is invalid");
                 return BadRequest(ModelState);
             }
 
             if (id != order.Order_id)
             {
+                Debug.WriteLine("ID Mismatch");
+                Debug.WriteLine("GET parameter" + id);
+                Debug.WriteLine("POST parameter" +order.Order_id);
                 return BadRequest();
             }
 
@@ -80,6 +85,7 @@ namespace HospitalManagement.Controllers
             {
                 if (!OrderExists(id))
                 {
+                    Debug.WriteLine("Order not found");
                     return NotFound();
                 }
                 else
@@ -87,7 +93,7 @@ namespace HospitalManagement.Controllers
                     throw;
                 }
             }
-
+            Debug.WriteLine("None of the conditions trigerred");
             return StatusCode(HttpStatusCode.NoContent);
         }
 
