@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Order</h2>
+<form action="/Order/Create" method="POST">
+   
+    <div>
+        <label>Patient ID:</label><input type="number" name="PatientId" />
+    </div>
+    <div>
+        <label>Category:</label><input type="text" name="Category" />
+    </div>
+    <div>
+        <label>Total Price:</label><input type="number" name="Total_Price" />
+    </div>
+    <div>
+        <input type="submit" value="Order Now" />
+    </div>
+</form>
+

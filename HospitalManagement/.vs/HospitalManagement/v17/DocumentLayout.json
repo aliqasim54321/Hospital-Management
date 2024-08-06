@@ -3,19 +3,39 @@
   "WorkspaceRootPath": "E:\\Hospital-Management\\HospitalManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Hospital-Management\\HospitalManagement\\jsondata\\order.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:jsondata\\order.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|E:\\Hospital-Management\\HospitalManagement\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|e:\\hospital-management\\hospitalmanagement\\controllers\\orderdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|E:\\Hospital-Management\\HospitalManagement\\controllers\\orderdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:controllers\\orderdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|e:\\hospital-management\\hospitalmanagement\\views\\order\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:views\\order\\new.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|e:\\hospital-management\\hospitalmanagement\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|e:\\hospital-management\\hospitalmanagement\\views\\order\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:views\\order\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|E:\\Hospital-Management\\HospitalManagement\\views\\order\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:views\\order\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Orders.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|E:\\Hospital-Management\\HospitalManagement\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|e:\\hospital-management\\hospitalmanagement\\views\\order\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:views\\order\\deleteconfirm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|e:\\hospital-management\\hospitalmanagement\\views\\order\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:views\\order\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Patients.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
@@ -23,6 +43,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|E:\\Hospital-Management\\HospitalManagement\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Hospital-Management\\HospitalManagement\\jsondata\\order.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:jsondata\\order.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|E:\\Hospital-Management\\HospitalManagement\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE653C6B-E42F-4D33-9E1F-E980F1465C98}|HospitalManagement.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Staffs.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
@@ -51,19 +79,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\Edit.cshtml",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Order\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T07:10:26.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "order.json",
-              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\jsondata\\order.json",
-              "RelativeDocumentMoniker": "jsondata\\order.json",
-              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\jsondata\\order.json",
-              "RelativeToolTip": "jsondata\\order.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-05T23:59:17.426Z",
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAuwH0AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T00:59:51.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\List.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\List.cshtml",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\List.cshtml",
+              "RelativeToolTip": "Views\\Order\\List.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T02:45:34.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.Orders [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Orders.sql",
+              "ToolTip": "dbo.Orders [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-08-05T19:31:03.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "New.cshtml",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\New.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\New.cshtml",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\New.cshtml",
+              "RelativeToolTip": "Views\\Order\\New.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T05:11:52.438Z",
               "EditorCaption": ""
             },
             {
@@ -74,24 +151,88 @@
               "RelativeDocumentMoniker": "Controllers\\OrderDataController.cs",
               "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Controllers\\OrderDataController.cs",
               "RelativeToolTip": "Controllers\\OrderDataController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAvAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAxwEkAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-05T19:48:34.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "dbo.Orders [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Orders.sql",
-              "ToolTip": "dbo.Orders [Data]",
+              "DocumentIndex": 7,
+              "Title": "DeleteConfirm.cshtml",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\DeleteConfirm.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\DeleteConfirm.cshtml",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\DeleteConfirm.cshtml",
+              "RelativeToolTip": "Views\\Order\\DeleteConfirm.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T06:46:46.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\Error.cshtml",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\Error.cshtml",
+              "RelativeToolTip": "Views\\Order\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T06:34:33.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "Models\\Patient.cs",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Models\\Patient.cs",
+              "RelativeToolTip": "Models\\Patient.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T04:51:17.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "dbo.Patients [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Patients.sql",
+              "ToolTip": "dbo.Patients [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-08-05T19:31:03.383Z",
+              "WhenOpened": "2024-08-05T06:44:06.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\Details.cshtml",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Views\\Order\\Details.cshtml",
+              "RelativeToolTip": "Views\\Order\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T04:36:18.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "order.json",
+              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\jsondata\\order.json",
+              "RelativeDocumentMoniker": "jsondata\\order.json",
+              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\jsondata\\order.json",
+              "RelativeToolTip": "jsondata\\order.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-05T23:59:17.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Order.cs",
               "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order.cs",
@@ -99,24 +240,11 @@
               "RelativeToolTip": "Models\\Order.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T19:06:46.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T19:06:46.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Patient.cs",
-              "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Models\\Patient.cs",
-              "RelativeDocumentMoniker": "Models\\Patient.cs",
-              "ToolTip": "E:\\Hospital-Management\\HospitalManagement\\Models\\Patient.cs",
-              "RelativeToolTip": "Models\\Patient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T04:51:17.759Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "IdentityModels.cs",
               "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Models\\IdentityModels.cs",
               "RelativeDocumentMoniker": "Models\\IdentityModels.cs",
@@ -128,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "202408051927135_order-patient.cs",
               "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Migrations\\202408051927135_order-patient.cs",
               "RelativeDocumentMoniker": "Migrations\\202408051927135_order-patient.cs",
@@ -140,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "202408050725470_patient-staff.cs",
               "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Migrations\\202408050725470_patient-staff.cs",
               "RelativeDocumentMoniker": "Migrations\\202408050725470_patient-staff.cs",
@@ -152,17 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "dbo.Patients [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Patients.sql",
-              "ToolTip": "dbo.Patients [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-08-05T06:44:06.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "dbo.Staffs [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_HospitalManagement_20240802042808/True/SqlTable/dbo.Staffs.sql",
               "ToolTip": "dbo.Staffs [Data]",
@@ -171,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "Staff.cs",
               "DocumentMoniker": "E:\\Hospital-Management\\HospitalManagement\\Models\\Staff.cs",
               "RelativeDocumentMoniker": "Models\\Staff.cs",

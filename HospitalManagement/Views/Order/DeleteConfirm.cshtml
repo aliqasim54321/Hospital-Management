@@ -1,0 +1,16 @@
+﻿﻿@model HospitalManagement.Models.OrderDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this animal?</h2>
+<a href="/Order/List">Cancel</a>
+<h2>@Model.Order_id</h2>
+<div>Patient Name: @Model.PatientName kg</div>
+<div>Category: @Model.Category</div>
+<div>Total Price: @Model.Total_Price  </div>
+<form action="/Order/Delete/@Model.Order_id" method="POST">
+<input type="submit" value="Confirm Delete" />
+
+</form>
+
