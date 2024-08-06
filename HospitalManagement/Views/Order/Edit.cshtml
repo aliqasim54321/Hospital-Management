@@ -1,22 +1,24 @@
-﻿﻿@model HospitalManagement.Models.Order
+﻿﻿@model HospitalManagement.Models.OrderDto
 
 @{
     ViewBag.Title = "Edit";
 }
 
 <h2>Update Order</h2>
-<form action="/Order/Update/@Model.SelectedOrder.Order_id" method="POST">
+<form action="/Order/Update/@Model.Order_id" method="POST">
     <div style="display:none;">
-        @* Pass through the animal ID *@
-        <input type="text" name="AnimalID" value="@Model.SelectedAnimal.AnimalID" />
+        @* Pass through the order ID *@
+        <input type="number" name="Order_id" value="@Model.Order_id" />
     </div>
     <div>
-        <label>Name:</label> <input type="text" name="AnimalName" value="@Model.SelectedAnimal.AnimalName" />
+        <label>Patient ID:</label> <input type="number" name="PatientId" value="@Model.PatientId" />
     </div>
     <div>
-        <label>Weight (kg):</label> <input type="number" name="AnimalWeight" value="@Model.SelectedAnimal.AnimalWeight" />
+        <label>Category:</label> <input type="text" name="Category" value="@Model.Category" />
     </div>
-
+    <div>
+        <label>Total Price:</label> <input type="number" name="Total_Price" value="@Model.Total_Price" />
+    </div>
     <div>
         <input type="submit" value="Update Order" />
 
