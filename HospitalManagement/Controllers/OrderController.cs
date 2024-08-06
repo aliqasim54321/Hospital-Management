@@ -13,11 +13,12 @@ namespace HospitalManagement.Controllers
     public class OrderController : Controller
     {
         private static readonly HttpClient client;
+        private JavaScriptSerializer jss = new JavaScriptSerializer();
         
         static OrderController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44361/api/");
+            client.BaseAddress = new Uri("https://localhost:44361/api/orderdata/");
 
         }
         // GET: Order/List
@@ -26,7 +27,7 @@ namespace HospitalManagement.Controllers
             //objective:communictae with our order data api to retrive a list of orders
             //curl https://localhost:44361/api/orderdata/listorders  
            
-            string url = "orderdata/listorders";
+            string url = "listorders";
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             //Debug.WriteLine("The response code is");
@@ -44,7 +45,7 @@ namespace HospitalManagement.Controllers
             //objective:communictae with our order data api to retrive one of the  order
             //curl https://localhost:44361/api/orderdata/findorder/{id}
             
-            string url = "orderdata/findorder/" + id;
+            string url = "findorder/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             Debug.WriteLine("The response code is");
@@ -65,7 +66,7 @@ namespace HospitalManagement.Controllers
         {
             //information about all orders in systam
             //GET api/orderdata/listorders
-            string url = "orderdata/listorders";
+            string url = "listorders";
             HttpResponseMessage response = client.GetAsync(url).Result;
             IEnumerable<OrderDto> OrderOptions = response.Content.ReadAsAsync<IEnumerable<OrderDto>>().Result;
             return View(OrderOptions);
@@ -79,9 +80,9 @@ namespace HospitalManagement.Controllers
             Debug.WriteLine(order.Order_id);
             //objective:add a new order into our system using the API
             //curl -H "Content-Type:application/json" -d @order.json https://localhost:44362/api/orderdata/addorder
-            string url = "orderdata/addorder";
+            string url = "addorder";
 
-            JavaScriptSerializer jss = new JavaScriptSerializer();
+            
             string jsonpayload = jss.Serialize(order);
 
             Debug.WriteLine(jsonpayload);
@@ -116,9 +117,9 @@ namespace HospitalManagement.Controllers
         public ActionResult Update(int id, Order order)
         {
             
-            string url = "orderdata/UpdateOrder/" + id;
+            string url = "updateOrder/" + id;
 
-            JavaScriptSerializer jss = new JavaScriptSerializer();
+            
             string jsonpayload = jss.Serialize(order);
 
             Debug.WriteLine(jsonpayload);
@@ -126,7 +127,7 @@ namespace HospitalManagement.Controllers
             content.Headers.ContentType.MediaType = "application/json";
 
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-
+            Debug.WriteLine(content);
             if (response.IsSuccessStatusCode)
             {
                 return RedirectToAction("List");
@@ -141,7 +142,7 @@ namespace HospitalManagement.Controllers
        
         public ActionResult DeleteConfirm(int id)
         {
-            string url = "orderdata/findorder/" + id;
+            string url = "findorder/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             OrderDto selectedorder = response.Content.ReadAsAsync<OrderDto>().Result;
             return View(selectedorder);
@@ -153,7 +154,7 @@ namespace HospitalManagement.Controllers
         public ActionResult Delete(int id)
         {
             
-            string url = "orderdata/deleteorder/" + id;
+            string url = "deleteorder/" + id;
             HttpContent content = new StringContent("");
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;

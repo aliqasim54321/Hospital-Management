@@ -1,6 +1,6 @@
 ﻿{
-  "Order_id":10,
+  
   "PatientId":5,
-  "Category":"x-ray",
+  "Category":"consultation",
   "Total_Price":550
 }
