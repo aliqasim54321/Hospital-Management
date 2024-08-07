@@ -12,17 +12,26 @@ namespace HospitalManagement.Models
         [Key]
         public int PatientId { get; set; }
 
-        public string PatientName { get; set;}
+        public string PatientName { get; set; }
 
-        public string PatientEmail { get; set;}
+        public string PatientEmail { get; set; }
 
-        public int PatientPhone { get; set;}
+        public int PatientPhone { get; set; }
 
         [ForeignKey("Staff")]
 
         public int StaffId { get; set; }
         public virtual Staff Staff { get; set; }
 
-       
+
     }
-} 
+
+    public class PatientDto
+    {
+        public int PatientId { get; set; }
+        public string PatientName { get; set; }
+        public string PatientEmail { get; set; }
+        public int PatientPhone { get; set; }
+        public int StaffId { get; set; }
+    }
+}
