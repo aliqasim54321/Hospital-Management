@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HospitalManagement.Models.PatientDto>
+@{
+    ViewBag.Title = "List";
+}
+
+
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-between">
+    <h2>List</h2>
+    <a href="/patient/New" class="btn btn-primary me-md-2" type="button">Add Patient</a>
+
+</div>
+
+@foreach (var patient in Model)
+{
+    <div class="card p-3 mb-3">
+        <h2>Name: <a href="/Patient/Details/@patient.PatientId">@patient.PatientName</a> </h2>
+
+        <p class="mt-3"> Phone : @patient.PatientPhone</p>
+        <p class="mt-3"> Email : @patient.PatientEmail</p>
+        <p class="mt-3"> Staff Id: @patient.StaffId </p>
+
+
+    </div>
+
+
+}
