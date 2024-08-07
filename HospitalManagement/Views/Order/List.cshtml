@@ -1,15 +1,59 @@
-﻿﻿@model IEnumerable<HospitalManagement.Models.OrderDto>
+﻿@model IEnumerable<HospitalManagement.Models.OrderDto>
 @{
     ViewBag.Title = "List";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/HM.jpg");
 }
 
-<h2>List</h2>
-@foreach (var order in Model)
-{
-    <h2><a href="/Order/Details/@order.Order_id">@order.Order_id</a></h2>
-    <div>Patient Name: @order.PatientName</div>
-    <div>Category: @order.Category</div>
-    <div>$@order.Total_Price</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        h2, h3 {
+            color: ghostwhite;
+        }
+        .order-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .order-container h2 {
+            margin: 0;
+        }
+        .order-container div {
+            margin: 5px 0;
+            color: ghostwhite;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>List</h2>
+    @foreach (var order in Model)
+    {
+        <div class="order-container">
+            <h2><a href="/Order/Details/@order.Order_id">@order.Order_id</a></h2>
+            <div>Patient Name: @order.PatientName</div>
+            <div>Category: @order.Category</div>
+            <div>$@order.Total_Price</div>
+        </div>
+    }
+</body>
+</html>
 
-}
 
