@@ -31,7 +31,7 @@ namespace HospitalManagement.Controllers
                 PatientName = p.PatientName,
                 PatientEmail= p.PatientEmail,
                 PatientPhone= p.PatientPhone,
-                StaffId= p.StaffId, 
+                StaffName= p.Staff.StaffDepartment, 
 
             }));
             return PatientDtos;
@@ -53,7 +53,7 @@ namespace HospitalManagement.Controllers
                 PatientName = Patient.PatientName,
                 PatientEmail = Patient.PatientEmail,
                 PatientPhone = Patient.PatientPhone,
-                StaffId = Patient.StaffId,
+                StaffName = Patient.Staff.StaffDepartment,
             };
             Debug.WriteLine(PatientDto.ToString());
 
@@ -81,7 +81,7 @@ namespace HospitalManagement.Controllers
                 Debug.WriteLine("POST parameter" + patient.PatientName);
                 Debug.WriteLine("POST parameter" + patient.PatientEmail);
                 Debug.WriteLine("POST parameter" + patient.PatientPhone);
-                Debug.WriteLine("POST parameter" + patient.StaffId);
+               
                 return BadRequest();
             }
 

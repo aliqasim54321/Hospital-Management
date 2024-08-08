@@ -300,6 +300,11 @@
     <Content Include="Views\Order\DeleteConfirm.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
     <Content Include="Views\Patient\List.cshtml" />
+    <Content Include="Views\Patient\Details.cshtml" />
+    <Content Include="Views\Patient\New.cshtml" />
+    <Content Include="Views\Patient\Error.cshtml" />
+    <Content Include="Views\Patient\Edit.cshtml" />
+    <Content Include="Views\Patient\DeleteConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

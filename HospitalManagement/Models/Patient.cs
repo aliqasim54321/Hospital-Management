@@ -33,5 +33,6 @@ namespace HospitalManagement.Models
         public string PatientEmail { get; set; }
         public int PatientPhone { get; set; }
         public int StaffId { get; set; }
+        public string StaffName { get; set; }
     }
 }

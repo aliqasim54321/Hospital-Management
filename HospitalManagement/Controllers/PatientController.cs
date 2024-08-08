@@ -6,17 +6,29 @@ using System.Web.Mvc;
 using System.Net.Http;
 using System.Diagnostics;
 using HospitalManagement.Models;
+using System.Web.Script.Serialization;
 
 
 namespace HospitalManagement.Controllers
 {
     public class PatientController : Controller
     {
-        // GET: Patient
+
+        private static readonly HttpClient client;
+        private JavaScriptSerializer jss = new JavaScriptSerializer();
+
+        static PatientController()
+        {
+            client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:44361/api/PatientData/");
+        }
+
+
+        // GET: Patient/List
         public ActionResult List()
         {
-            HttpClient client = new HttpClient() { };
-            string url = "https://localhost:44361/api/patientdata/listpatients";
+        
+            string url = "ListPatients";
             HttpResponseMessage response = client.GetAsync(url).Result;
             Debug.WriteLine("Number of Patient arrived");
             Debug.WriteLine("The response code is");
@@ -30,73 +42,124 @@ namespace HospitalManagement.Controllers
         // GET: Patient/Details/5
         public ActionResult Details(int id)
         {
+
+            //objective : communicate with our patient data api to retrieve one of patient
+            //curl https://localhost:44361/api/PatientsData/findPatient/{id}
+            string url = "findPatient/"+id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+              
+
+            PatientDto selectedpatient = response.Content.ReadAsAsync<PatientDto>().Result;
+     
+            return View(selectedpatient);
+        }
+
+        public ActionResult Error()
+        {
             return View();
         }
 
-        // GET: Patient/Create
-        public ActionResult Create()
+        // GET: Patient/New
+        public ActionResult New()
         {
             return View();
         }
 
         // POST: Patient/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(PatientDto patient)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            Debug.WriteLine("The jsonpayloade is:");
+            //Debug.WriteLine(patient.patient);
 
-                return RedirectToAction("Index");
-            }
-            catch
+            //Add new patient into our database using API
+            //curl -H "Content-Type:application/json" -d @patient.json https://localhost:44361/api/PatientsData/addpatient
+
+            string url = "addpatient";
+
+          
+            string jsonpayload = jss.Serialize(patient);
+
+            Debug.WriteLine(jsonpayload);
+
+            HttpContent content = new StringContent(jsonpayload);
+            content.Headers.ContentType.MediaType = "application/json";
+
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
+            if (response.IsSuccessStatusCode)
             {
-                return View();
+                return RedirectToAction("List");
+            }
+            else
+            {
+                return RedirectToAction("Error");
             }
         }
 
         // GET: Patient/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            string url = "findpatient/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+            PatientDto SelectedPatient = response.Content.ReadAsAsync<PatientDto>().Result;
+
+            return View(SelectedPatient);
+
         }
 
-        // POST: Patient/Edit/5
+        // POST: Patient/Update/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Update(int id, PatientDto patient)
         {
-            try
-            {
-                // TODO: Add update logic here
+                           
+                //serialize into JSON
+                //Send the request to the API
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                string url = "UpdatePatient/" + id;
+
+
+                string jsonpayload = jss.Serialize(patient);
+                Debug.WriteLine(jsonpayload);
+
+                HttpContent content = new StringContent(jsonpayload);
+                content.Headers.ContentType.MediaType = "application/json";
+
+                //POST: api/PatientData/UpdatePatient/{id}
+                //Header : Content-Type: application/json
+                HttpResponseMessage response = client.PostAsync(url, content).Result;
+
+
+
+
+                return RedirectToAction("Details/" + id);
+            
         }
 
         // GET: Patient/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteConfirm(int id)
         {
-            return View();
+            string url = "findpatient/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+
+            PatientDto selectedpatient = response.Content.ReadAsAsync<PatientDto>().Result;
+
+
+            return View(selectedpatient);
+
         }
 
         // POST: Patient/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            string url = "deletepatient/" + id;
+            HttpContent content = new StringContent("");
+            content.Headers.ContentType.MediaType = "application/json";
+            HttpResponseMessage response = client.PostAsync(url, content).Result;
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+            return RedirectToAction("List");
+
         }
     }
 }
