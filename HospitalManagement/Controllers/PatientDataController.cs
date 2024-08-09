@@ -18,6 +18,17 @@ namespace HospitalManagement.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// This method lists the number of Patients in the database
+        /// </summary>
+        /// <returns>An array of Patients objects</returns>
+        /// <example>
+        /// GET: api/PatientsData/ListDepartments =>
+        ///  using command prompt 
+        ///curl https://localhost:44361/api/DepartmentData/ListDepartments
+        /// {  "PatientId": 9, "PatientName": "Ali Ashraf", "PatientPhone": "1234567890",  "Staff Department": Human Resourse }
+
+
         // GET: api/PatientData/ListPatients
         [HttpGet]
            public IEnumerable<PatientDto> ListPatients()
@@ -36,6 +47,23 @@ namespace HospitalManagement.Controllers
             }));
             return PatientDtos;
         }
+
+        /// <summary>
+        /// This method provides/fetch the information about a particular Patient from the database
+        /// </summary>
+        /// <param name="id"> id refres to the PatientId of an Patient whose information is requested</param>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: A Patient in the system matching up to the  Patient ID primary key
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <example> 
+        /// GET: api/PatientData/FindDepartment/9=> [{  "PatientId": 9, "PatientName": "Ali Ashraf", "PatientPhone": "1234567890",  "Staff Department": Human Resourse }]
+        ///  OR using command prompt
+        ///  curl https://localhost:44361/api/DepartmentData/FindDepartment/9 =>
+        /// [{ "PatientId": 9, "PatientName": "Ali Ashraf", "PatientPhone": "1234567890",  "Staff Department": Human Resourse }]
+        /// </example>
 
         // GET: api/PatientData/FindPatient/5
         [ResponseType(typeof(Patient))]
@@ -61,6 +89,23 @@ namespace HospitalManagement.Controllers
             return Ok(PatientDto);
         }
 
+        /// <summary>
+        /// This method updates the infomation about the current patient in the database
+        /// </summary>
+        /// <param name="id"> The id of an patient whose information needs to be updated</param>
+        /// <param name="department">JSON FORM DATA of an patient </param>
+        /// <returns>
+        /// HEADER: 204 (Success, No Content Response)
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// or
+        /// HEADER: 404 (Not Found)
+        /// </returns>
+        /// <example>>curl -d @Patient.json -H "Content-type:application/json"  https://localhost:44355/api/PatientData/UpdatePatient/1 => updates the informatio of an Patient with PatientId =9 with the updated informtion listed in the Patientnt.json file
+        /// POST: api/PatientData/UpdatePatient/5
+        /// FORM DATA:  Patient JASON Object
+        /// </example>
+       
         // POST: api/PatientData/UpdatePatient/5
         [ResponseType(typeof(void))]
         [HttpPost]
@@ -106,6 +151,20 @@ namespace HospitalManagement.Controllers
             Debug.WriteLine("None of the condition triggered");
             return StatusCode(HttpStatusCode.NoContent);
         }
+        /// <summary>
+        /// This method adds the new patient into the database
+        /// </summary>
+        /// <param name="patient"> JSON FORM DATA of an patient</param>
+        /// <returns>
+        /// HEADER: 201 (Created)
+        /// CONTENT: patient ID, patient Data
+        /// or
+        /// HEADER: 400 (Bad Request)
+        /// </returns>
+        /// <example>>curl -d @patient.json -H "Content-type:application/json"  https://localhost:44361/api/patientData/Addpatient => adds the new  patient object listed in the patient.json file  into the database
+        ///  POST: api/patientData/Addpatient
+        /// FORM DATA: patient JSON Object
+        /// </example>
 
         // POST: api/PatientData/AddPatient
         [ResponseType(typeof(Patient))]
@@ -124,6 +183,20 @@ namespace HospitalManagement.Controllers
         }
 
         // POST: api/PatientData/DeleteAnimal/5
+        /// <summary>
+        /// This method deletes the specific Patient from the database by providing the id of an Patient as a parameter 
+        /// </summary>
+        /// <param name="id">The id of an Patient to be deleted</param>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// or
+        /// HEADER: 404 (NOT FOUND)
+        /// </returns>
+        /// <example> Post: api/PatientData/DeletePatient/5  => deletes the Patient from the database having id = 5
+        /// FORM DATA: (empty)
+        /// curl -d ""  https://localhost:44361/api/PatientData/DeletePatient/5 =>deletes the Patient from the database having id = 8
+        /// </example>
+        
         [ResponseType(typeof(Patient))]
         [HttpPost]
         public IHttpActionResult DeletePatient(int id)
