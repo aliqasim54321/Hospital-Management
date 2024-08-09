@@ -1,0 +1,26 @@
+﻿@model HospitalManagement.Models.IncomeDto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Income</h2>
+<form action="/Income/Update/@Model.income_id" method="POST">
+    <div style="display:none;">
+        @* Pass through the income ID *@
+        <input type="number" name="income_id" value="@Model.income_id" />
+    </div>
+    <div>
+        <label>Payment Type ID:</label> <input type="text" name="paytype" value="@Model.pay_type" />
+    </div>
+    <div>
+        <label>Order ID:</label> <input type="number" name="Order_id" value="@Model.Order_id" />
+    </div>
+    <div>
+        <label>Date:</label> <input type="date" name="income_date" value="@Model.income_date" />
+    </div>
+    <div>
+        <input type="submit" value="Update Income" />
+
+    </div>
+</form>

@@ -1,0 +1,10 @@
+﻿@model HospitalManagement.Models.IncomeDto
+@{
+    ViewBag.Title = "View";
+}
+
+<a href="/Income/List">Go back to list</a>
+<div>@Model.income_id</div>
+<div>Payment Type: @Model.pay_type</div>
+<div>Category: @Model.category</div>
+<div>Date: @Model.income_date</div>

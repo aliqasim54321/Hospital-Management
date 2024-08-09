@@ -31,6 +31,11 @@ namespace HospitalManagement.Models
 
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Income> Income { get; set; }
+
+        public DbSet<Expense> Expenses { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

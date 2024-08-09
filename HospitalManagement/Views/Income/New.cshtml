@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add New Income</h2>
+<form action="/Income/Create" method="POST">
+
+    <div>
+        <label>Order ID:</label><input type="number" name="OrderId" />
+    </div>
+    <div>
+        <label>Payment Type:</label><input type="text" name="paytype" placeholder="Credit/Debit/Cash/Online Banking" />
+    </div>
+    <div>
+        <label>Date</label><input type="date" name="Date" />
+    </div>
+    <div>
+        <input type="submit" value="Add Income" />
+    </div>
+</form>

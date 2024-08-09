@@ -1,0 +1,14 @@
+﻿﻿@model IEnumerable<HospitalManagement.Models.IncomeDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+@foreach (var income in Model)
+{
+    <h2><a href="/Income/Details/@income.income_id">@income.income_id</a></h2>
+    <div>Income Type @income.pay_type</div>
+    <div>Category: @income.category</div>
+    <div>Date : @income.income_date</div>
+
+}

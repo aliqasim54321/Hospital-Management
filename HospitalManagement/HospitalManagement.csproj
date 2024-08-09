@@ -183,6 +183,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IncomeController.cs" />
+    <Compile Include="Controllers\IncomeDataController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\OrderDataController.cs" />
@@ -211,9 +213,23 @@
     <Compile Include="Migrations\202408051927135_order-patient.Designer.cs">
       <DependentUpon>202408051927135_order-patient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202408090224110_Income.cs" />
+    <Compile Include="Migrations\202408090224110_Income.Designer.cs">
+      <DependentUpon>202408090224110_Income.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408090421356_exppense.cs" />
+    <Compile Include="Migrations\202408090421356_exppense.Designer.cs">
+      <DependentUpon>202408090421356_exppense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202408090515311_Income1.cs" />
+    <Compile Include="Migrations\202408090515311_Income1.Designer.cs">
+      <DependentUpon>202408090515311_Income1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Expense.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Income.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Patient.cs" />
@@ -305,6 +321,12 @@
     <Content Include="Views\Patient\Error.cshtml" />
     <Content Include="Views\Patient\Edit.cshtml" />
     <Content Include="Views\Patient\DeleteConfirm.cshtml" />
+    <Content Include="Views\Income\New.cshtml" />
+    <Content Include="Views\Income\List.cshtml" />
+    <Content Include="Views\Income\Error.cshtml" />
+    <Content Include="Views\Income\Edit.cshtml" />
+    <Content Include="Views\Income\Details.cshtml" />
+    <Content Include="Views\Income\DeleteConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -351,6 +373,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202408051927135_order-patient.resx">
       <DependentUpon>202408051927135_order-patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408090224110_Income.resx">
+      <DependentUpon>202408090224110_Income.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408090421356_exppense.resx">
+      <DependentUpon>202408090421356_exppense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202408090515311_Income1.resx">
+      <DependentUpon>202408090515311_Income1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

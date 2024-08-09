@@ -1,0 +1,14 @@
+﻿@model HospitalManagement.Models.IncomeDto
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this Income entry?</h2>
+<a href="/Income/List">Cancel</a>
+<h2>@Model.income_id</h2>
+<div>Payment Type: @Model.pay_type kg</div>
+<div>Category: @Model.category</div>
+<div>Date: @Model.income_date  </div>
+<form action="/Income/Delete/@Model.income_id" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>
