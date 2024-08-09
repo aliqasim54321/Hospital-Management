@@ -18,6 +18,9 @@ namespace HospitalManagement.Models
 
         public int PatientPhone { get; set; }
 
+        // A patient belongs to one Staff Department 
+        // A Staff Department can be there with many patient
+
         [ForeignKey("Staff")]
 
         public int StaffId { get; set; }
