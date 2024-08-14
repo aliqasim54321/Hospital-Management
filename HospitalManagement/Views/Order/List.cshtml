@@ -1,15 +1,92 @@
-﻿﻿@model IEnumerable<HospitalManagement.Models.OrderDto>
+@model IEnumerable<HospitalManagement.Models.OrderDto>
 @{
     ViewBag.Title = "List";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/th.jpg");
 }
 
-<h2>List</h2>
-@foreach (var order in Model)
-{
-    <h2><a href="/Order/Details/@order.Order_id">@order.Order_id</a></h2>
-    <div>Patient Name: @order.PatientName</div>
-    <div>Category: @order.Category</div>
-    <div>$@order.Total_Price</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       body {
+           background-image: url('@backgroundImagePath');
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           font-family: Arial, sans-serif;
+           color: #333;
+       }
+       h2 {
+           color: ghostwhite;
+       }
+       .new {
+           background-color: navy;
+           text-decoration: none;
+           color: white;
+           border: none;
+           cursor: pointer;
+           padding: 10px 20px;
+           border-radius: 5px;
+           font-size: 1.2em;
+           margin-top: 10px;
+           display: inline-block;
+       }
 
-}
+           .new:hover {
+               text-decoration: none;
+               color: yellow;
+           }
+       table {
+           width: 100%;
+           border-collapse: collapse;
+           margin: 20px 0;
+           background-color: rgba(0, 0, 0, 0.5);
+       }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: ghostwhite
+        }
+       th {
+           background-color: rgba(0, 0, 0, 0.5);
+           
+       }
+       a {
+           text-decoration: double;
+           
+           color: black;
+       }
+       a:hover {
+           color: yellow;
+           text-decoration: underline;
+       }
+    </style>
+</head>
+<body>
+    <h2>List</h2>
+    <a class="new" href="/Order/New">Add New Order</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Patient Name</th>
+                <th>Category</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.Order_id</td>
+                    <td><a href="/Order/Details/@order.Order_id">@order.PatientName</a></td>
+                    <td>@order.Category</td>
+                    <td>$@order.Total_Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
 
