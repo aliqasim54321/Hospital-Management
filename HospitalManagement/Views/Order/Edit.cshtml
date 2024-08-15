@@ -1,27 +1,127 @@
-﻿﻿@model HospitalManagement.Models.OrderDto
+@model HospitalManagement.Models.OrderDto
 
 @{
     ViewBag.Title = "Edit";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/hospital.jpg"); // Change to appropriate image path
 }
 
-<h2>Update Order</h2>
-<form action="/Order/Update/@Model.Order_id" method="POST">
-    <div style="display:none;">
-        @* Pass through the order ID *@
-        <input type="number" name="Order_id" value="@Model.Order_id" />
-    </div>
-    <div>
-        <label>Patient ID:</label> <input type="number" name="PatientId" value="@Model.PatientId" />
-    </div>
-    <div>
-        <label>Category:</label> <input type="text" name="Category" value="@Model.Category" />
-    </div>
-    <div>
-        <label>Total Price:</label> <input type="number" name="Total_Price" value="@Model.Total_Price" />
-    </div>
-    <div>
-        <input type="submit" value="Update Order" />
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    </div>
-</form>
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+        }
+
+        label {
+            color: ghostwhite;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="datetime"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: sandybrown;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: wheat;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .cancel {
+            background-color: navy;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .cancel:hover {
+            color: yellow;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a class="cancel" href="/Order/List">Cancel</a>
+    <form action="/Order/Update/@Model.Order_id" method="POST">
+        <h2>Update Order</h2>
+        <div style="display:none;">
+            @* Pass through the order ID *@
+            <input type="number" name="Order_id" value="@Model.Order_id" required />
+        </div>
+
+        <div>
+            <label>Patient ID:</label>
+            <input type="number" name="PatientId" value="@Model.PatientId" required />
+        </div>
+
+        <div>
+            <label>Category:</label>
+            <input type="text" name="Category" value="@Model.Category" required />
+        </div>
+
+        <div>
+            <label>Total Price:</label>
+            <input type="number" name="Total_Price" value="@Model.Total_Price" required />
+        </div>
+
+        <div>
+            <input type="submit" value="Update Order" />
+        </div>
+    </form>
+</body>
+</html>
 
