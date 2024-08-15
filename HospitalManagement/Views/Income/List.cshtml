@@ -1,14 +1,89 @@
-﻿﻿@model IEnumerable<HospitalManagement.Models.IncomeDto>
+@model IEnumerable<HospitalManagement.Models.IncomeDto>
 @{
     ViewBag.Title = "List";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/income.jpg"); // Update the image path as needed
 }
 
-<h2>List</h2>
-@foreach (var income in Model)
-{
-    <h2><a href="/Income/Details/@income.income_id">@income.income_id</a></h2>
-    <div>Income Type @income.pay_type</div>
-    <div>Category: @income.category</div>
-    <div>Date : @income.income_date</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        h2 {
+            color: ghostwhite;
+        }
+        .new {
+            background-color: navy;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            display: inline-block;
+        }
 
-}
+        .new:hover {
+            text-decoration: none;
+            color: yellow;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: ghostwhite;
+        }
+        th {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        a {
+            text-decoration: double;
+            color: black;
+        }
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Income List</h2>
+    <a class="new" href="/Income/New">Add New Income</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Income ID</th>
+                <th>Payment Type</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var income in Model)
+            {
+                <tr>
+                    <td>@income.income_id</td>
+                    <td><a href="/Income/Details/@income.income_id">@income.pay_type</a></td>
+                    <td>@income.category</td>
+                    <td>@income.income_date.ToShortDateString()</td> <!-- Convert date to short date format -->
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
