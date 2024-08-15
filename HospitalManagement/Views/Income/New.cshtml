@@ -1,21 +1,114 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Create";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/income.jpg"); // Update with the correct image path
 }
 
-<h2>Add New Income</h2>
-<form action="/Income/Create" method="POST">
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    <div>
-        <label>Order ID:</label><input type="number" name="OrderId" />
-    </div>
-    <div>
-        <label>Payment Type:</label><input type="text" name="paytype" placeholder="Credit/Debit/Cash/Online Banking" />
-    </div>
-    <div>
-        <label>Date</label><input type="date" name="Date" />
-    </div>
-    <div>
-        <input type="submit" value="Add Income" />
-    </div>
-</form>
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 80%;
+            margin: auto;
+        }
+
+        label {
+            color: ghostwhite;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: wheat;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: navy;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a href="/Income/List" class="btn btn-back">Go back to list</a>
+    <form action="/Income/Create" method="POST">
+        <h2>Add New Income</h2>
+
+        <div>
+            <label>Order ID:</label>
+            <input type="number" name="OrderId" required />
+        </div>
+
+        <div>
+            <label>Payment Type:</label>
+            <input type="text" name="paytype" placeholder="Credit/Debit/Cash/Online Banking" required />
+        </div>
+
+        <div>
+            <label>Date:</label>
+            <input type="date" name="Date" required />
+        </div>
+
+        <div>
+            <input type="submit" value="Add Income" />
+        </div>
+    </form>
+</body>
+</html>
