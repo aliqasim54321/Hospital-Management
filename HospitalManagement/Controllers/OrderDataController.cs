@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -15,16 +15,16 @@ namespace HospitalManagement.Controllers
     public class OrderDataController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-   /// <summary>
-   /// Returns all orders in the system.
-   /// </summary>
-   /// <returns>
-   /// HEADER: 200 (OK)
-   /// CONTENT: all orders in the database, including their associated customers and menus.
-   /// </returns>
-   /// <example>
-   /// GET: api/OrderData/ListOrder
-   /// </example>
+        /// <summary>
+        /// Returns all orders in the system.
+        /// </summary>
+        /// <returns>
+        /// HEADER: 200 (OK)
+        /// CONTENT: all orders in the database, including their associated patient and order  price.
+        /// </returns>
+        /// <example>
+        /// GET: api/OrderData/ListOrder
+        /// </example>
         // GET: api/OrderData/ListOrders
         [HttpGet]
         public IEnumerable<OrderDto> ListOrders()
@@ -50,9 +50,9 @@ namespace HospitalManagement.Controllers
         /// or
         /// HEADER: 404 (NOT FOUND)
         /// </returns>
-        /// <param name="id">The primary key of the animal</param>
+        /// <param name="id">The primary key of the orderl</param>
         /// <example>
-        /// GET: api/MenuData/FindOrder/5
+        /// GET: api/OrderData/FindOrder/5
         /// </example>
         // GET: api/OrderData/FindOrder/5
         [ResponseType(typeof(OrderDto))]
@@ -75,6 +75,7 @@ namespace HospitalManagement.Controllers
 
             return Ok(OrderDto);
         }
+
         /// <summary>
         /// Updates a particular order in the system with POST Data input
         /// </summary>
@@ -94,6 +95,7 @@ namespace HospitalManagement.Controllers
         // POST: api/OrderData/UpdateOrder/5
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult UpdateOrder(int id, Order order)
         {
             Debug.WriteLine("I have reached the update order method");
@@ -132,6 +134,7 @@ namespace HospitalManagement.Controllers
             Debug.WriteLine("None of the conditions trigerred");
             return StatusCode(HttpStatusCode.NoContent);
         }
+
         /// <summary>
         /// Adds an order to the system
         /// </summary>
@@ -149,6 +152,7 @@ namespace HospitalManagement.Controllers
         // POST: api/OrderData/AddOrder
         [ResponseType(typeof(Order))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult AddOrder(Order order)
         {
             if (!ModelState.IsValid)
@@ -177,6 +181,7 @@ namespace HospitalManagement.Controllers
         // POST: api/OrderData/DeleteOrder/5
         [ResponseType(typeof(Order))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult DeleteOrder(int id)
         {
             Order order = db.Orders.Find(id);
