@@ -1,23 +1,117 @@
-﻿
 @{
     ViewBag.Title = "Create";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/patient.jpg"); // Update with the correct image path
 }
 
-<h2>Create Patient</h2>
-<form action="/Patient/Create" method="POST">
-    <div>
-        <label>Name:</label> <input type="text" name="PatientName" />
-    </div>
-    <div>
-        <label>Phone:</label> <input type="number" name="PatientPhone" />
-    </div>
-    <div>
-        <label>Email:</label> <input type="text" name="PatientEmail" />
-    </div>
-    <div>
-        <label>Staff Department:</label> <input type="number" name="StaffId"" />
-    </div>
-    <div>
-        <input type="submit" value="Add Patient Details" />
-    </div>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 80%;
+            margin: auto;
+        }
+
+        label {
+            color: ghostwhite;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: wheat;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: navy;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a href="/Patient/List" class="btn btn-back">Go back to list</a>
+    <form action="/Patient/Create" method="POST">
+        <h2>Create Patient</h2>
+
+        <div>
+            <label>Name:</label>
+            <input type="text" name="PatientName" required />
+        </div>
+
+        <div>
+            <label>Phone:</label>
+            <input type="number" name="PatientPhone" required />
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <input type="text" name="PatientEmail" required />
+        </div>
+
+        <div>
+            <label>Staff Department:</label>
+            <input type="number" name="StaffId" required />
+        </div>
+
+        <div>
+            <input type="submit" value="Add Patient Details" />
+        </div>
+    </form>
+</body>
+</html>
