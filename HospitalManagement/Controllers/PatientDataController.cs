@@ -108,6 +108,7 @@ namespace HospitalManagement.Controllers
         // POST: api/PatientData/UpdatePatient/5
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult UpdatePatient(int id, Patient patient)
         {
             Debug.WriteLine("I have reached the update animal method");
@@ -168,6 +169,7 @@ namespace HospitalManagement.Controllers
         // POST: api/PatientData/AddPatient
         [ResponseType(typeof(Patient))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult AddPatient(Patient patient)
         {
             if (!ModelState.IsValid)
@@ -198,6 +200,7 @@ namespace HospitalManagement.Controllers
         
         [ResponseType(typeof(Patient))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult DeletePatient(int id)
         {
             Patient patient = db.Patients.Find(id);
