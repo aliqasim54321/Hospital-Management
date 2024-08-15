@@ -1,17 +1,93 @@
-﻿﻿@model HospitalManagement.Models.PatientDto
+@model HospitalManagement.Models.PatientDto
 
 @{
     ViewBag.Title = "DeleteConfirm";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/patient-delete-bg.jpg"); // Update with the correct image path
 }
 
-<h2>Are you sure you want to delete this Patient?</h2>
-<a href="/Patient/List">Cancel</a>
-<h2>Name: @Model.PatientName</h2>
-<div>Phone: @Model.PatientPhone</div>
-<div>Email: @Model.PatientEmail</div>
-<div>Email: @Model.StaffName</div>
-<form action="/Patient/Delete/@Model.PatientId" method="POST">
-    <input type="submit" value="Confirm Delete" />
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-</form>
+        h2 {
+            color: ghostwhite;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
 
+        div {
+            color: ghostwhite;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 80%;
+            margin: auto;
+        }
+
+        input[type="submit"],
+        button {
+            background-color: lightcoral;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: darkred;
+        }
+
+        .cancel {
+            background-color: navy;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .detail {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Are you sure you want to delete this Patient?</h2>
+    <a class="cancel" href="/Patient/List">Cancel</a>
+    <div class="detail">Name: @Model.PatientName</div>
+    <div class="detail">Phone: @Model.PatientPhone</div>
+    <div class="detail">Email: @Model.PatientEmail</div>
+    <div class="detail">Staff Department: @Model.StaffName</div>
+    <form action="/Patient/Delete/@Model.PatientId" method="POST">
+        <input type="submit" value="Confirm Delete" />
+    </form>
+</body>
+</html>
