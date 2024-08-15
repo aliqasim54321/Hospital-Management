@@ -1,26 +1,127 @@
-﻿@model HospitalManagement.Models.IncomeDto
+@model HospitalManagement.Models.IncomeDto
 
 @{
     ViewBag.Title = "Edit";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/income.jpg"); // Change to appropriate image path
 }
 
-<h2>Update Income</h2>
-<form action="/Income/Update/@Model.income_id" method="POST">
-    <div style="display:none;">
-        @* Pass through the income ID *@
-        <input type="number" name="income_id" value="@Model.income_id" />
-    </div>
-    <div>
-        <label>Payment Type ID:</label> <input type="text" name="paytype" value="@Model.pay_type" />
-    </div>
-    <div>
-        <label>Order ID:</label> <input type="number" name="Order_id" value="@Model.Order_id" />
-    </div>
-    <div>
-        <label>Date:</label> <input type="date" name="income_date" value="@Model.income_date" />
-    </div>
-    <div>
-        <input type="submit" value="Update Income" />
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    </div>
-</form>
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+        }
+
+        label {
+            color: ghostwhite;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: sandybrown;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: wheat;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .cancel {
+            background-color: navy;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .cancel:hover {
+            color: yellow;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a class="cancel" href="/Income/List">Cancel</a>
+    <form action="/Income/Update/@Model.income_id" method="POST">
+        <h2>Update Income</h2>
+        <div style="display:none;">
+            @* Pass through the income ID *@
+            <input type="number" name="income_id" value="@Model.income_id" />
+        </div>
+
+        <div>
+            <label>Payment Type ID:</label>
+            <input type="text" name="paytype" value="@Model.pay_type" required />
+        </div>
+
+        <div>
+            <label>Order ID:</label>
+            <input type="number" name="Order_id" value="@Model.Order_id" required />
+        </div>
+
+        <div>
+            <label>Date:</label>
+            <input type="date" name="income_date" value="@Model.income_date" required />
+        </div>
+
+        <div>
+            <input type="submit" value="Update Income" />
+        </div>
+    </form>
+</body>
+</html>
