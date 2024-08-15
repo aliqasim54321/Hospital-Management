@@ -1,27 +1,80 @@
-﻿@model IEnumerable<HospitalManagement.Models.PatientDto>
+@model IEnumerable<HospitalManagement.Models.PatientDto>
 @{
     ViewBag.Title = "List";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/patient-bg.jpg"); // Update with the correct image path
 }
 
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
+        h2 {
+            color: ghostwhite;
+        }
 
-<div class="d-grid gap-2 d-md-flex justify-content-md-between">
+        .new {
+            background-color: navy;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .new:hover {
+            text-decoration: none;
+            color: yellow;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            color: ghostwhite;
+            margin: 5px 0;
+        }
+
+        a {
+            color: black;
+            text-decoration: double;
+        }
+
+        a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
     <h2>List</h2>
-    <a href="/patient/New" class="btn btn-primary me-md-2" type="button">Add Patient</a>
+    <a class="new" href="/patient/New">Add Patient</a>
 
-</div>
-
-@foreach (var patient in Model)
-{
-    <div class="card p-3 mb-3">
-        <h2>Name: <a href="/Patient/Details/@patient.PatientId">@patient.PatientName</a> </h2>
-
-        <p class="mt-3"> Phone : @patient.PatientPhone</p>
-        <p class="mt-3"> Email : @patient.PatientEmail</p>
-        <p class="mt-3"> Staff Department: @patient.StaffName</p>
-
-
-    </div>
-
-
-}
+    @foreach (var patient in Model)
+    {
+        <div class="card">
+            <h2>Name: <a href="/Patient/Details/@patient.PatientId">@patient.PatientName</a></h2>
+            <p>Phone: @patient.PatientPhone</p>
+            <p>Email: @patient.PatientEmail</p>
+            <p>Staff Department: @patient.StaffName</p>
+        </div>
+    }
+</body>
+</html>
