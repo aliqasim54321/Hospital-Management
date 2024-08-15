@@ -1,22 +1,116 @@
-﻿
+﻿@model IEnumerable<HospitalManagement.Models.OrderDto>
+
 @{
     ViewBag.Title = "Create";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/HM.jpg");
 }
 
-<h2>Create Order</h2>
-<form action="/Order/Create" method="POST">
-   
-    <div>
-        <label>Patient ID:</label><input type="number" name="PatientId" />
-    </div>
-    <div>
-        <label>Category:</label><input type="text" name="Category" />
-    </div>
-    <div>
-        <label>Total Price:</label><input type="number" name="Total_Price" />
-    </div>
-    <div>
-        <input type="submit" value="Order Now" />
-    </div>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 80%;
+            margin: auto;
+        }
+
+        label {
+            color: ghostwhite;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: navy;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: wheat;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: navy;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a href="/Order/List" class="btn btn-back">Go back to list</a>
+    <form action="/Order/Create" method="POST">
+        <h2>Create Order</h2>
+
+        <div>
+            <label>Patient ID:</label>
+            <input type="number" name="PatientId" required />
+        </div>
+
+        <div>
+            <label>Category:</label>
+            <input type="text" name="Category" required />
+        </div>
+
+        <div>
+            <label>Total Price:</label>
+            <input type="number" name="Total_Price" required />
+        </div>
+
+        <div>
+            <input type="submit" value="Order" />
+        </div>
+    </form>
+</body>
+</html>
