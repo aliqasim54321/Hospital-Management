@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,12 +13,40 @@ namespace HospitalManagement.Controllers
     public class OrderController : Controller
     {
         private static readonly HttpClient client;
+        private JavaScriptSerializer jss = new JavaScriptSerializer();
         
         static OrderController()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44361/api/");
+            client.BaseAddress = new Uri("https://localhost:44361/api/orderdata/");
 
+        }
+
+        /// <summary>
+        /// Grabs the authentication cookie sent to this controller.
+        /// For proper WebAPI authentication, you can send a post request with login credentials to the WebAPI and log the access token from the response. The controller already knows this token, so we're just passing it up the chain.
+        /// 
+        /// Here is a descriptive article which walks through the process of setting up authorization/authentication directly.
+        /// https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/individual-accounts-in-web-api
+        /// </summary>
+        private void GetApplicationCookie()
+        {
+            string token = "";
+            //HTTP client is set up to be reused, otherwise it will exhaust server resources.
+            //This is a bit dangerous because a previously authenticated cookie could be cached for
+            //a follow-up request from someone else. Reset cookies in HTTP client before grabbing a new one.
+            client.DefaultRequestHeaders.Remove("Cookie");
+            if (!User.Identity.IsAuthenticated) return;
+
+            HttpCookie cookie = System.Web.HttpContext.Current.Request.Cookies.Get(".AspNet.ApplicationCookie");
+            if (cookie != null) token = cookie.Value;
+
+            //collect token as it is submitted to the controller
+            //use it to pass along to the WebAPI.
+            Debug.WriteLine("Token Submitted is : " + token);
+            if (token != "") client.DefaultRequestHeaders.Add("Cookie", ".AspNet.ApplicationCookie=" + token);
+
+            return;
         }
         // GET: Order/List
         public ActionResult List()
@@ -26,7 +54,7 @@ namespace HospitalManagement.Controllers
             //objective:communictae with our order data api to retrive a list of orders
             //curl https://localhost:44361/api/orderdata/listorders  
            
-            string url = "orderdata/listorders";
+            string url = "listorders";
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             //Debug.WriteLine("The response code is");
@@ -44,7 +72,7 @@ namespace HospitalManagement.Controllers
             //objective:communictae with our order data api to retrive one of the  order
             //curl https://localhost:44361/api/orderdata/findorder/{id}
             
-            string url = "orderdata/findorder/" + id;
+            string url = "findorder/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             Debug.WriteLine("The response code is");
@@ -61,11 +89,12 @@ namespace HospitalManagement.Controllers
             return View();
         }
         // GET: Order/New
+        [Authorize]
         public ActionResult New()
         {
             //information about all orders in systam
             //GET api/orderdata/listorders
-            string url = "orderdata/listorders";
+            string url = "listorders";
             HttpResponseMessage response = client.GetAsync(url).Result;
             IEnumerable<OrderDto> OrderOptions = response.Content.ReadAsAsync<IEnumerable<OrderDto>>().Result;
             return View(OrderOptions);
@@ -73,15 +102,17 @@ namespace HospitalManagement.Controllers
 
         // POST: Order/Create
         [HttpPost]
+        [Authorize]
         public ActionResult Create(Order order)
         {
+            GetApplicationCookie();//get token credentials
             Debug.WriteLine("the json payload is:");
             Debug.WriteLine(order.Order_id);
             //objective:add a new order into our system using the API
             //curl -H "Content-Type:application/json" -d @order.json https://localhost:44362/api/orderdata/addorder
-            string url = "orderdata/addorder";
+            string url = "addorder";
 
-            JavaScriptSerializer jss = new JavaScriptSerializer();
+            
             string jsonpayload = jss.Serialize(order);
 
             Debug.WriteLine(jsonpayload);
@@ -101,6 +132,7 @@ namespace HospitalManagement.Controllers
         }
 
         // GET: Order/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
            
@@ -113,12 +145,13 @@ namespace HospitalManagement.Controllers
 
         // POST: Order/Update/5
         [HttpPost]
+        [Authorize]
         public ActionResult Update(int id, Order order)
         {
-            
-            string url = "orderdata/UpdateOrder/" + id;
+            GetApplicationCookie();//get token credentials
+            string url = "updateOrder/" + id;
 
-            JavaScriptSerializer jss = new JavaScriptSerializer();
+            
             string jsonpayload = jss.Serialize(order);
 
             Debug.WriteLine(jsonpayload);
@@ -126,7 +159,7 @@ namespace HospitalManagement.Controllers
             content.Headers.ContentType.MediaType = "application/json";
 
             HttpResponseMessage response = client.PostAsync(url, content).Result;
-
+            Debug.WriteLine(content);
             if (response.IsSuccessStatusCode)
             {
                 return RedirectToAction("List");
@@ -138,10 +171,11 @@ namespace HospitalManagement.Controllers
         }
 
         // GET: Order/DeleteConfirm/5
-       
+        [Authorize]
+
         public ActionResult DeleteConfirm(int id)
         {
-            string url = "orderdata/findorder/" + id;
+            string url = "findorder/" + id;
             HttpResponseMessage response = client.GetAsync(url).Result;
             OrderDto selectedorder = response.Content.ReadAsAsync<OrderDto>().Result;
             return View(selectedorder);
@@ -149,11 +183,12 @@ namespace HospitalManagement.Controllers
 
         // POST: Order/Delete/5
         [HttpPost]
-        
+        [Authorize]
+
         public ActionResult Delete(int id)
         {
-            
-            string url = "orderdata/deleteorder/" + id;
+            GetApplicationCookie();//get token credentials
+            string url = "deleteorder/" + id;
             HttpContent content = new StringContent("");
             content.Headers.ContentType.MediaType = "application/json";
             HttpResponseMessage response = client.PostAsync(url, content).Result;
