@@ -1,10 +1,88 @@
-﻿@model HospitalManagement.Models.IncomeDto
+@model HospitalManagement.Models.IncomeDto
+
 @{
     ViewBag.Title = "View";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/income.jpg"); // Change to the appropriate image path
 }
 
-<a href="/Income/List">Go back to list</a>
-<div>@Model.income_id</div>
-<div>Payment Type: @Model.pay_type</div>
-<div>Category: @Model.category</div>
-<div>Date: @Model.income_date</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            margin: 50px auto;
+            max-width: 600px;
+        }
+
+        h2 {
+            color: ghostwhite;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-update {
+            background-color: lightseagreen;
+        }
+
+        .btn-delete {
+            background-color: lightcoral;
+        }
+
+        .btn-back {
+            background-color: navy;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .detail {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <a href="/Income/List" class="btn btn-back">Go back to list</a>
+    <div class="content">
+        <h2>@Model.income_id</h2>
+        <div class="detail">Payment Type: @Model.pay_type</div>
+        <div class="detail">Category: @Model.category</div>
+        <div class="detail">Date: @Model.income_date</div>
+
+        <a href="/Income/Edit/@Model.income_id" class="btn btn-update">Update</a>
+        <a style="color: #ab2020;" href="/Income/DeleteConfirm/@Model.income_id" class="btn btn-delete">Delete</a>
+    </div>
+</body>
+</html>
