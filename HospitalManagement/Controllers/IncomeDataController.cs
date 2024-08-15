@@ -80,6 +80,7 @@ namespace HospitalManagement.Controllers
 
         [ResponseType(typeof(void))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult UpdateIncome(int id, Income income)
         {
             Debug.WriteLine("I have reached the update income method");
@@ -130,6 +131,7 @@ namespace HospitalManagement.Controllers
 
         [ResponseType(typeof(Income))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult AddIncome(Income income)
         {
             if (!ModelState.IsValid)
@@ -151,6 +153,7 @@ namespace HospitalManagement.Controllers
 
         [ResponseType(typeof(Income))]
         [HttpPost]
+        [Authorize]
         public IHttpActionResult DeleteIncome(int id)
         {
             Income income = db.Income.Find(id);
