@@ -1,32 +1,132 @@
-﻿@model HospitalManagement.Models.PatientDto
+@model HospitalManagement.Models.PatientDto
+
 @{
     ViewBag.Title = "Edit";
+    var backgroundImagePath = Url.Content("~/Content/Images/Location/patient-edit-bg.jpg"); // Change to appropriate image path
 }
 
-<h2>Edit Patient</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('@backgroundImagePath');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
+        h2 {
+            color: ghostwhite;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-<form method="POST" action="/Patient/Update/@Model.PatientId">
-    <input type="text" style="display:none;" name="PatientId" value="@Model.PatientId" />
-    <div>
-        <label>Name:</label>
-        <input type="text" name="PatientName" value="@Model.PatientName" />
-    </div>
-    <div>
-        <label>Phone:</label>
-        <input type="number" name="PatientPhone" value="@Model.PatientPhone" />
-    </div>
-    <div>
-        <label>Email:</label>
-        <input type="text" name="PatientEmail" value="@Model.PatientEmail" />
-    </div>
-    <div>
-        <label>Staff Department:</label>
-        <input type="number" name="StaffId" value="@Model.StaffId" />
-    </div>
-    <div>
+        form {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+        }
 
-        <input type="submit" value="Update" />
-    </div>
+        label {
+            color: ghostwhite;
+            display: block;
+            margin-bottom: 5px;
+        }
 
-</form>
+        input[type="text"],
+        input[type="number"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: sandybrown;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: wheat;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .cancel {
+            background-color: navy;
+            text-decoration: none;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .cancel:hover {
+            color: yellow;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a class="cancel" href="/Patient/List">Cancel</a>
+    <form method="POST" action="/Patient/Update/@Model.PatientId">
+        <h2>Edit Patient</h2>
+        
+        <div style="display:none;">
+            @* Pass through the patient ID *@
+            <input type="text" name="PatientId" value="@Model.PatientId" />
+        </div>
+
+        <div>
+            <label>Name:</label>
+            <input type="text" name="PatientName" value="@Model.PatientName" required />
+        </div>
+
+        <div>
+            <label>Phone:</label>
+            <input type="number" name="PatientPhone" value="@Model.PatientPhone" required />
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <input type="email" name="PatientEmail" value="@Model.PatientEmail" required />
+        </div>
+
+        <div>
+            <label>Staff Department:</label>
+            <input type="number" name="StaffId" value="@Model.StaffId" required />
+        </div>
+
+        <div>
+            <input type="submit" value="Update" />
+        </div>
+    </form>
+</body>
+</html>
