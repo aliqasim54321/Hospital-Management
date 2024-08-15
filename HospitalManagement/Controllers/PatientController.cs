@@ -111,6 +111,7 @@ namespace HospitalManagement.Controllers
         ///GET: Patient/New => New View => (this webpage gives a form with an empty input fields where new Patient's information can be filled)
 
         // GET: Patient/New
+        [Authorize]
         public ActionResult New()
         {
             return View();
@@ -131,8 +132,10 @@ namespace HospitalManagement.Controllers
 
         // POST: Patient/Create
         [HttpPost]
+        [Authorize]
         public ActionResult Create(PatientDto patient)
         {
+            GetApplicationCookie();//get token credentials
             Debug.WriteLine("The jsonpayloade is:");
             //Debug.WriteLine(patient.patient);
 
@@ -169,6 +172,7 @@ namespace HospitalManagement.Controllers
         /// </returns>
        
         // GET: Patient/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
             string url = "findpatient/" + id;
@@ -198,12 +202,13 @@ namespace HospitalManagement.Controllers
 
         // POST: Patient/Update/5
         [HttpPost]
+        [Authorize]
         public ActionResult Update(int id, PatientDto patient)
         {
                            
                 //serialize into JSON
                 //Send the request to the API
-
+                GetApplicationCookie();//get token credentials
                 string url = "UpdatePatient/" + id;
 
 
@@ -235,6 +240,7 @@ namespace HospitalManagement.Controllers
        
 
         // GET: Patient/DeleteConfirm/5
+        [Authorize]
         public ActionResult DeleteConfirm(int id)
         {
             string url = "findpatient/" + id;
@@ -262,8 +268,10 @@ namespace HospitalManagement.Controllers
 
         // POST: Patient/Delete/5
         [HttpPost]
+        [Authorize]
         public ActionResult Delete(int id)
         {
+            GetApplicationCookie();//get token credentials
             string url = "deletepatient/" + id;
             HttpContent content = new StringContent("");
             content.Headers.ContentType.MediaType = "application/json";
